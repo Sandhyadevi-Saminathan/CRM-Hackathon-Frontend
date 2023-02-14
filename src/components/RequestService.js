@@ -38,7 +38,7 @@ function RequestService() {
         },
         onSubmit: async (values) => {
             try {
-                await axios.post("https://hackathon-p9ka.onrender.com/service", values, {
+                await axios.post("https://hackathon-p9ka.onrender.com/rservice", values, {
                     headers: {
                         Authorization: `${window.localStorage.getItem("token")}`
                     }

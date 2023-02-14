@@ -13,7 +13,7 @@ function Lead() {
     }, [])
     let fetchUsers = async () => {
         try {
-            let userData = await axios.get("https://hackathon-p9ka.onrender.com/contact", {
+            let userData = await axios.get("https://hackathon-p9ka.onrender.com/lead", {
                 headers: {
                     Authorization: `${window.localStorage.getItem("token")}`
                 }

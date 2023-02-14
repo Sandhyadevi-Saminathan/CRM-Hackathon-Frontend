@@ -29,7 +29,7 @@ function UserList() {
     }
     let handleDelete = async (userData) => {
         console.log(userData)
-        if (data != "EMPLOYEE") {
+        if (data != "EMPLOYEe") {
             try {
 
                 await axios.delete(`https://hackathon-p9ka.onrender.com/user/${userData}`, {
@@ -52,7 +52,7 @@ function UserList() {
     }
 
     let handleedit = async (userData) => {
-        if (data != "EMPLOYEE") {
+        if (data != "EMPLOYEe") {
             try {
 
                 navigate(`/edit/${userData}`)

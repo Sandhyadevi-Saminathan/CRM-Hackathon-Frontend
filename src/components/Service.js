@@ -24,7 +24,7 @@ function Service() {
         }
     }
     let addser = async () => {
-        if (data !== "EMPLOYEE") {
+        if (data !== "EMPLOYEe") {
             try {
 
                 navigate('/rservice')
@@ -53,7 +53,7 @@ function Service() {
 
     }
     let handleedit = async (userData) => {
-        if (data != "EMPLOYEE") {
+        if (data != "EMPLOYEe") {
             try {
 
                 navigate(`/editservice/${userData}`)

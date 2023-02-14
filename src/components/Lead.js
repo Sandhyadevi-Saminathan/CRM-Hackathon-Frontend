@@ -25,7 +25,7 @@ function Lead() {
     }
 
     let addcon = async () => {
-        if (data == "ADMIn") {
+        if (data == "ADMIN") {
             try {
 
                 navigate('/contact')
@@ -54,7 +54,7 @@ function Lead() {
 
     }
     let handleedit = async (userData) => {
-        if (data != "EMPLOYEe") {
+        if (data != "EMPLOYEE") {
             try {
 
                 navigate(`/editlead/${userData}`)

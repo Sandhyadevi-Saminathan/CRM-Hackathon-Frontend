@@ -7,26 +7,26 @@ import {
 } from "react-router-dom";
 
 
-import Login from './components/login';
-import Register from './components/Register';
-import UserList from './components/Userlist';
-import EditUser from './components/EditUser';
-import Contact from './components/Contact';
-import Lead from './components/Lead';
-import RequestService from './components/RequestService';
-import Service from './components/Service';
-import Profile from './components/profile';
+import Login from './components/profile/login';
+import Register from './components/profile/Register';
+import UserList from './components/user/Userlist';
+import EditUser from './components/user/EditUser';
+import Contact from './components/lead/Contact';
+import Lead from './components/lead/Lead';
+import RequestService from './components/service/RequestService';
+import Service from './components/service/Service';
+import Profile from './components/profile/profile';
 import Home from './components/Home';
-import Addemployee from './components/Addemployee';
-import Userdata from './components/Userdata';
+import Addemployee from './components/user/Addemployee';
+import Userdata from './components/user/Userdata';
 import ResestPassword from './ResetPassword';
-import ForgetPassword from './components/ForgetPassword';
-import Verification from './components/Verification';
-import ChangePassword from './components/ChangePassword';
-import Leaddetails from './components/leaddetails';
-import Editlead from './components/editlead';
-import Servicedetails from './components/servicedetails';
-import Editservice from './components/editservice';
+import ForgetPassword from './components/password/ForgetPassword';
+import Verification from './components/password/Verification';
+import ChangePassword from './components/password/ChangePassword';
+import Leaddetails from './components/lead/leaddetails';
+import Editlead from './components/lead/editlead';
+import Servicedetails from './components/service/servicedetails';
+import Editservice from './components/service/editservice';
 
 
 

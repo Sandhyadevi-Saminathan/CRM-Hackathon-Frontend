@@ -35,43 +35,26 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="card text-white bg-primary  mb-5" style={{ "width": "35rem", "height": "12rem" }}>
-                        <div class="card-body">
-                            <h5 class="card-title">Lead Form</h5>
-                            <p class="card-text">Enter the details and update the status. Only admin can update this form.</p>
-                            <Link to={`/contact`}> <td><button className='btn btn-danger'>Lead Form</button></td></Link>
 
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card text-white bg-primary ml-5 mb-3" style={{ "width": "35rem", "height": "12rem" }}>
                         <div class="card-body">
-                            <h5 class="card-title">View Lead Details</h5>
+                            <h5 class="card-title"> Lead Details</h5>
                             <p class="card-text">View the Name,Email adddress, Company name and adrees</p>
                             <a href="/lead" class="btn btn-danger">View Lead details</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="card text-white bg-primary mb-3" style={{ "width": "35rem", "height": "12rem" }}>
-                        <div class="card-body">
-                            <h5 class="card-title">Service Request</h5>
-                            <p class="card-text">Enter the details and update the status. Only admin can update this form.</p>
-                            <Link to={'/rservice'}>     <td><button className='btn btn-danger'>Service Request Form</button></td></Link>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div className='container' style={{ "width": "45rem" }}>
                 <div class="row" >
                     <div class="col-sm-6" style={{ "textAlign": "center" }}>
                         <div class=" card text-white bg-primary mt-3 mb-3" style={{ "width": "35rem", "height": "12rem" }} >
                             <div class="card-body" >
-                                <h5 class="card-title">View Service Request</h5>
+                                <h5 class="card-title">Service Request Details</h5>
                                 <p class="card-text">View the Company,Service rerquest details</p>
                                 <a href="/service" class="btn btn-danger" >View Service Request</a>
                             </div>

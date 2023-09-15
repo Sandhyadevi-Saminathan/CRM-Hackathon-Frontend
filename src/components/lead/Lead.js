@@ -139,7 +139,6 @@ function Lead() {
                             })
                         }
 
-
                         </tbody>
                     </table>
                     <button onClick={() => addcon()} className='btn btn-primary text-right mb-2 ml-2'>Create Contact</button>

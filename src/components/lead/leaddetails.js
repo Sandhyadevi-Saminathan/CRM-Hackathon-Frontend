@@ -22,6 +22,7 @@ function Leaddetails() {
             console.log(userData.data);
             setUserList(userData.data)
             setpgloading(false)
+
         } catch (error) {
             console.log('error')
         }

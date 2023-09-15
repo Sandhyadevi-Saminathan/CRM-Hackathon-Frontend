@@ -18,6 +18,7 @@ function Editservice() {
                 }
             })
             formik.setValues(userData.data)
+            setloading(false)
         }
     }, [])
 

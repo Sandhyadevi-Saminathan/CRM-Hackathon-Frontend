@@ -22,6 +22,7 @@ function Servicedetails() {
             })
             console.log(userData.data);
             setUserList(userData.data)
+            setloading(false)
         } catch (error) {
             console.log('error')
         }

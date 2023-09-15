@@ -20,6 +20,7 @@ function Service() {
                 }
             })
             setUserList(userData.data)
+            setloading(false)
         } catch (error) {
             console.log('error')
         }

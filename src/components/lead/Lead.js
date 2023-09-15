@@ -20,6 +20,7 @@ function Lead() {
                 }
             })
             setUserList(userData.data)
+            setloading(false)
         } catch (error) {
             console.log('error')
         }

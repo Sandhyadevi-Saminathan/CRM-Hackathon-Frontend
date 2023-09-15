@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Lead() {
+    const [isloading, setloading] = useState(true)
     const data = localStorage.getItem('Role');
     const navigate = useNavigate()
     const [userList, setUserList] = useState([])
@@ -25,7 +26,7 @@ function Lead() {
     }
 
     let addcon = async () => {
-        if (data !== "EMPLOYEe") {
+        if (data != "EMPLOYEe") {
             try {
 
                 navigate('/contact')
@@ -69,57 +70,86 @@ function Lead() {
             alert("You cant edit...Contact Your Admin")
         }
     }
+    let handledelete = async (id) => {
+        if (data != "EMPLOYEe") {
+            try {
+                const confirm = window.confirm("Are u sure?")
+                if (confirm) {
+                    await axios.delete(`https://6476d0759233e82dd53a5ea1.mockapi.io/user/${id}`)
+                    fetchUsers()
+                }
+
+            } catch (error) {
+                console.log(error)
+                alert("Something went wronmg")
+            }
+        }
+        else {
+            alert("You cant Delete...Contact Your Admin")
+        }
+    }
     return (
         <>
+            {isloading ? (
+                <div class="col d-flex justify-content-center">
+                    <h1>Loading</h1>
+                </div>
+
+            )
+                :
+
+
+                <div className='container'>
+
+                    <h1 className="h3 mb-0 text-gray-800">Company Contact List</h1>
+                    <br></br>
+                    <table class="table table-success">
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Address</th>
 
 
 
-            <div className='container'>
+                        </tr>
+                        <tbody>{
 
-                <h1 className="h3 mb-0 text-gray-800">Company Contact List</h1>
-                <br></br>
-                <table class="table table-success">
-                    <tr>
-                        <th>Name</th>
-                        <th>Company</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Address</th>
+                            userList.map((data) => {
+                                return <tr>
+                                    <td>{data.fname}</td>
+                                    <td>{data.company}</td>
+                                    <td>{data.email}</td>
+                                    <td>{data.status}</td>
+                                    <td>{data.address}</td>
 
-
-
-                    </tr>
-                    <tbody>{
-
-                        userList.map((data) => {
-                            return <tr>
-                                <td>{data.fname}</td>
-                                <td>{data.company}</td>
-                                <td>{data.email}</td>
-                                <td>{data.status}</td>
-                                <td>{data.address}</td>
-
-                                <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
-                                <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
+                                    <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
+                                    <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
+                                    <td>
+                                        <button onClick={() => {
+                                            handledelete(data.id)
+                                        }} className='btn btn-danger btn-sm mr-1'>Delete</button>
+                                    </td>
 
 
 
-                            </tr>
-                        })
-                    }
+                                </tr>
+                            })
+                        }
 
 
-                    </tbody>
-                </table>
-                <button onClick={() => addcon()} className='btn btn-primary text-right mb-2 ml-2'>Create Contact</button>
-                <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
-                <button onClick={() => {
-                    window.localStorage.removeItem("token");
-                    navigate("/")
-                }} className='btn btn-primary mb-2 ml-2'>Logout</button>
-            </div>
+                        </tbody>
+                    </table>
+                    <button onClick={() => addcon()} className='btn btn-primary text-right mb-2 ml-2'>Create Contact</button>
+                    <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
+                    <button onClick={() => {
+                        window.localStorage.removeItem("token");
+                        navigate("/")
+                    }} className='btn btn-primary mb-2 ml-2'>Logout</button>
+                </div>
 
-
+            }
         </>
     )
 }

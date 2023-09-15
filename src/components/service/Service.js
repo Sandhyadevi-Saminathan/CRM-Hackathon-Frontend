@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 function Service() {
+    const [isloading, setloading] = useState(true)
     const data = localStorage.getItem('Role');
     const [userList, setUserList] = useState([])
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Service() {
         }
     }
     let addser = async () => {
-        if (data !== "EMPLOYEe") {
+        if (data != "EMPLOYEe") {
             try {
 
                 navigate('/rservice')
@@ -76,50 +77,56 @@ function Service() {
                 navigate("/")
             }} className='btn btn-primary mt -3 ml-2'>Logout</button>
 
+            {isloading ? (
+                <div class="col d-flex justify-content-center">
+                    <h1>Loading</h1>
+                </div>
 
-            <div className='container'>
-                <h1 className="h3 mb-0 text-gray-800">SERVICE REQUEST</h1>
-                <table class="table table-success">
-                    <tr>
-                        <th>Company</th>
-                        <th>Service Request</th>
-                        <th>Details</th>
-                        <th>Request Date</th>
-                        <th>Status</th>
-                        <th>Solved Date</th>
-
-
-
-                    </tr>
-                    <tbody>{
-
-                        userList.map((data) => {
-                            return <tr>
-                                <td>{data.company}</td>
-                                <td>{data.service}</td>
-                                <td>{data.details}</td>
-                                <td>{data.rdate}</td>
-                                <td>{data.status}</td>
-                                <td>{data.sdate}</td>
-
-
-                                <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
-                                <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
+            )
+                :
+                <div className='container'>
+                    <h1 className="h3 mb-0 text-gray-800">SERVICE REQUEST</h1>
+                    <table class="table table-success">
+                        <tr>
+                            <th>Company</th>
+                            <th>Service Request</th>
+                            <th>Details</th>
+                            <th>Request Date</th>
+                            <th>Status</th>
+                            <th>Solved Date</th>
 
 
 
-                            </tr>
-                        })
-                    }
+                        </tr>
+                        <tbody>{
+
+                            userList.map((data) => {
+                                return <tr>
+                                    <td>{data.company}</td>
+                                    <td>{data.service}</td>
+                                    <td>{data.details}</td>
+                                    <td>{data.rdate}</td>
+                                    <td>{data.status}</td>
+                                    <td>{data.sdate}</td>
+
+
+                                    <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
+                                    <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
 
 
 
-                    </tbody>
-                </table>
-                <button onClick={() => addser()} className='btn btn-primary text-right mb-2 ml-2'>Create Service</button>
-                <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
-            </div>
+                                </tr>
+                            })
+                        }
 
+
+
+                        </tbody>
+                    </table>
+                    <button onClick={() => addser()} className='btn btn-primary text-right mb-2 ml-2'>Create Service</button>
+                    <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
+                </div>
+            }
         </>
     )
 }

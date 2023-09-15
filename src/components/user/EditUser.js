@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
 
 function EditUser() {
+    const [isloading, setloading] = useState(true)
     const navigate = useNavigate()
     let params = useParams()
 
@@ -52,44 +53,54 @@ function EditUser() {
 
     })
     return (
-        <div className='row justify-content-center align-items-center'  >
-            <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-10 rounded" style={{ backgroundColor: "white" }}>
+        <>
+            {isloading ? (
+                <div class="col d-flex justify-content-center">
+                    <h1>Loading</h1>
+                </div>
 
-                <form onSubmit={formik.handleSubmit}>
-                    <div className='row'>
+            )
+                :
+                <div className='row justify-content-center align-items-center'  >
+                    <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-10 rounded" style={{ backgroundColor: "white" }}>
 
-                        <div className='col-lg-12'>
-                            <label>Name</label>
-                            <input type='text' name="fname"
-                                className='form-control' onChange={formik.handleChange} value={formik.values.fname} />
-                        </div>
-                        <div className='col-lg-12'>
-                            <label>Email</label>
-                            <input type='text' name="email"
-                                className='form-control' onChange={formik.handleChange} value={formik.values.email} />
+                        <form onSubmit={formik.handleSubmit}>
+                            <div className='row'>
 
-                        </div>
-                        <div className='col-lg-12'>
-                            <label>Phone</label>
-                            <input type='number' name="phone"
-                                className='form-control' onChange={formik.handleChange} value={formik.values.phone} />
+                                <div className='col-lg-12'>
+                                    <label>Name</label>
+                                    <input type='text' name="fname"
+                                        className='form-control' onChange={formik.handleChange} value={formik.values.fname} />
+                                </div>
+                                <div className='col-lg-12'>
+                                    <label>Email</label>
+                                    <input type='text' name="email"
+                                        className='form-control' onChange={formik.handleChange} value={formik.values.email} />
 
-                        </div>
+                                </div>
+                                <div className='col-lg-12'>
+                                    <label>Phone</label>
+                                    <input type='number' name="phone"
+                                        className='form-control' onChange={formik.handleChange} value={formik.values.phone} />
 
-                        <div className='col-lg-12'>
-                            <label>Last Name</label>
-                            <input type='name' name="lname"
-                                className='form-control' onChange={formik.handleChange} value={formik.values.lname} />
+                                </div>
 
-                        </div>
+                                <div className='col-lg-12'>
+                                    <label>Last Name</label>
+                                    <input type='name' name="lname"
+                                        className='form-control' onChange={formik.handleChange} value={formik.values.lname} />
 
-                        <button type={"Submit"} className='btn btn-primary mt-3' style={{ "margin-left": "40%" }} >Update</button>
-                        <Link to={`/userlist`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
+                                </div>
 
+                                <button type={"Submit"} className='btn btn-primary mt-3' style={{ "margin-left": "40%" }} >Update</button>
+                                <Link to={`/userlist`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
+
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
+            }
+        </>
     )
 }
 

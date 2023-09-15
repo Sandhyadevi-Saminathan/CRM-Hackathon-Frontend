@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function UserList() {
+    const [isloading, setloading] = useState(true)
     const data = localStorage.getItem('Role');
     const token = localStorage.getItem('token');
     console.log(data)
@@ -121,45 +122,51 @@ function UserList() {
 
             </div>
 
+            {isloading ? (
+                <div class="col d-flex justify-content-center">
+                    <h1>Loading</h1>
+                </div>
+
+            )
+                :
+
+                <div className="container">
+
+                    <table class="table table-success">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+
+                        </tr>
+                        <tbody>{
+
+                            userList.map((data) => {
+                                return <tr>
+                                    <td>{data.fname}</td>
+                                    <td>{data.email}</td>
+                                    <td>{data.phone}</td>
+                                    <td>{data.role}</td>
 
 
-            <div className="container">
+                                    <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
+                                    <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
 
-                <table class="table table-success">
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Role</th>
+                                    <td><button onClick={() => handleDelete(data._id)} className='btn btn-danger'>Delete</button></td>
 
-                    </tr>
-                    <tbody>{
-
-                        userList.map((data) => {
-                            return <tr>
-                                <td>{data.fname}</td>
-                                <td>{data.email}</td>
-                                <td>{data.phone}</td>
-                                <td>{data.role}</td>
-
-
-                                <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
-                                <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
-
-                                <td><button onClick={() => handleDelete(data._id)} className='btn btn-danger'>Delete</button></td>
-
-                            </tr>
-                        })
-                    }
+                                </tr>
+                            })
+                        }
 
 
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
 
-            </div >
-
+                </div >
+            }
         </>
     )
 }

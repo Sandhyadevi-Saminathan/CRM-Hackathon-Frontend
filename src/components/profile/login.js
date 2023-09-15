@@ -32,7 +32,7 @@ function Login() {
                 window.localStorage.setItem("ID", userData.data.user._id)
                 alert("Login Succes");
                 const ids = userData.data.user;
-                navigate(`user/${ids._id}`)
+                navigate(`/portal/userlist`)
             } catch (error) {
                 alert('invalid user/password')
                 console.error(error);

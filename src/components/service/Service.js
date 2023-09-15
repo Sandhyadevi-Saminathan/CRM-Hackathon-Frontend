@@ -29,7 +29,7 @@ function Service() {
         if (data != "EMPLOYEe") {
             try {
 
-                navigate('/rservice')
+                navigate('/portal/rservice')
 
             }
             catch (error) {
@@ -45,7 +45,7 @@ function Service() {
 
         try {
 
-            navigate(`/servicedetails/${userData}`)
+            navigate(`/portal/servicedetails/${userData}`)
 
         }
         catch (error) {
@@ -91,10 +91,7 @@ function Service() {
 
     return (
         <>
-            <button onClick={() => {
-                window.localStorage.removeItem("token");
-                navigate("/")
-            }} className='btn btn-primary mt -3 ml-2'>Logout</button>
+
 
             {isloading ? (
                 <div class="col d-flex justify-content-center">
@@ -147,7 +144,7 @@ function Service() {
                         </tbody>
                     </table>
                     <button onClick={() => addser()} className='btn btn-primary text-right mb-2 ml-2'>Create Service</button>
-                    <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
+                    <Link to={`/portal/userlist`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
                 </div>
             }
         </>

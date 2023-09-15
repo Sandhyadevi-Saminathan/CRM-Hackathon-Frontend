@@ -31,12 +31,12 @@ function Sidebar() {
                 </li>
 
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/portal/managebooks">
+                    <Link className="nav-link" to="/portal/lead">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
                         <span>Lead Details</span></Link>
                 </li>
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/portal/withdrawlist">
+                    <Link className="nav-link" to="/portal/service">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
                         <span>Service Request Details</span></Link>
 

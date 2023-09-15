@@ -57,7 +57,7 @@ function UserList() {
         if (data != "EMPLOYEe") {
             try {
 
-                navigate(`/edit/${userData}`)
+                navigate(`/portal/edit/${userData}`)
 
             }
             catch (error) {
@@ -74,7 +74,7 @@ function UserList() {
 
         try {
 
-            navigate(`/Userdata/${userData}`)
+            navigate(`/portal//Userdata/${userData}`)
 
         }
         catch (error) {
@@ -89,7 +89,7 @@ function UserList() {
         if (data != "EMPLOYEe") {
             try {
 
-                navigate('/Addemployee')
+                navigate('/portal/Addemployee')
 
             }
             catch (error) {
@@ -112,11 +112,8 @@ function UserList() {
         <>
             <button onClick={() => addemp()} className='btn btn-primary text-right mb-2 ml-2'>Add Employee</button>
 
-            <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
-            <button onClick={() => {
-                window.localStorage.removeItem("token");
-                navigate("/")
-            }} className='btn btn-primary mb-2  ml-2'>Logout</button>
+
+
 
             <div className="d-sm-flex align-items-flex-end justify-content-center mb-4">
 

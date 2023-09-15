@@ -30,7 +30,7 @@ function Profile() {
         console.log(userList.role);
         try {
 
-            navigate(`/Home/`)
+            navigate(`/portal/userlist`)
         }
         catch (error) {
             console.log('error')
@@ -59,11 +59,8 @@ function Profile() {
                             <h4 class="card-text">Email: {userList.email}</h4>
                             <h4 class="card-text">Phone Number: {userList.phone}</h4>
                             <h4 class="card-text">Role: {userList.role}</h4>
-                            <button onClick={() => handlehome(userList)} className='btn btn-primary active" mt -3'>Home</button>
-                            <button onClick={() => {
-                                window.localStorage.removeItem("token");
-                                navigate("/")
-                            }} className='btn btn-primary mt -3 ml-2'>Logout</button>
+                            <button onClick={() => handlehome(userList)} className='btn btn-primary active" mt -3'>Back</button>
+
 
                         </div>
 

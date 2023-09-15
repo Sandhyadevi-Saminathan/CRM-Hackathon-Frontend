@@ -135,7 +135,7 @@ function Addemployee() {
 
 
                             <button type='Submit' className='btn btn-primary rounded col-lg-12 justify-content-center align-items-center mt-2'>Add Employee</button>
-                            <NavLink to={'/userlist'}> <button type='button' className='btn btn-primary rounded col-lg-12 justify-content-center align-items-center mt-2'>Back</button></NavLink>
+                            <NavLink to={'/portal/userlist'}> <button type='button' className='btn btn-primary rounded col-lg-12 justify-content-center align-items-center mt-2'>Back</button></NavLink>
                         </div><hr />
                     </form>
                 </div>

@@ -30,7 +30,7 @@ function Lead() {
         if (data != "EMPLOYEe") {
             try {
 
-                navigate('/contact')
+                navigate('/portal/contact')
 
             }
             catch (error) {
@@ -46,7 +46,7 @@ function Lead() {
 
         try {
 
-            navigate(`/leaddetails/${userData}`)
+            navigate(`/portal/leaddetails/${userData}`)
 
         }
         catch (error) {
@@ -59,7 +59,7 @@ function Lead() {
         if (data != "EMPLOYEe") {
             try {
 
-                navigate(`/editlead/${userData}`)
+                navigate(`/portal/editlead/${userData}`)
 
             }
             catch (error) {
@@ -142,11 +142,8 @@ function Lead() {
                         </tbody>
                     </table>
                     <button onClick={() => addcon()} className='btn btn-primary text-right mb-2 ml-2'>Create Contact</button>
-                    <Link to={`/Home`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
-                    <button onClick={() => {
-                        window.localStorage.removeItem("token");
-                        navigate("/")
-                    }} className='btn btn-primary mb-2 ml-2'>Logout</button>
+                    <Link to={`/portal/userlist`}><button className='btn btn-primary text-right mb-2 ml-2'>Back</button> </Link>
+
                 </div>
 
             }

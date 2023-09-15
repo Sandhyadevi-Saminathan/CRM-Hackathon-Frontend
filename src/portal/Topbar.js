@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Topbar() {
-
+    const data = localStorage.getItem('Role');
+    const id = localStorage.getItem('ID');
+    const navigate = useNavigate()
     return (
         <>
 
@@ -16,9 +18,8 @@ function Topbar() {
                         <Link className="nav-link dropdown-toggle" to="/" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {/* <span class="font-weight-bold" style={{ color: "black" }}>Hello</span> */}
-                            <Link className="nav-link" to="/home">
-                                <span className="mr-2 d-none d-lg-inline text-white - 600 medium" > Home</span>
-                            </Link>
+                            <Link className="nav-link dropdown-toggle" role="button" to='/portal/user/${id}'>
+                                <span class="font-weight-bold" style={{ color: "white" }}>PROFILE</span></Link>
 
                             <Link className="nav-link" to="/">
 
@@ -29,7 +30,7 @@ function Topbar() {
                         </Link>
                     </li>
                 </ul>
-            </nav>
+            </nav >
 
 
         </>

@@ -20,6 +20,7 @@ function EditUser() {
                 }
             })
             formik.setValues(userData.data)
+            setloading(false)
         }
     }, [])
 

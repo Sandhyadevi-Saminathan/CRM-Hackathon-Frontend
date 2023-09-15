@@ -130,7 +130,7 @@ function Lead() {
                                     <td>
                                         <button onClick={() => {
                                             handledelete(data.id)
-                                        }} className='btn btn-danger btn-sm mr-1'>Delete</button>
+                                        }} className='btn btn-danger'>Delete</button>
                                     </td>
 
 

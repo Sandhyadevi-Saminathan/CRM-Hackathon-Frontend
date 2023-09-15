@@ -70,6 +70,24 @@ function Service() {
             alert("You cant edit..Contact your Admin")
         }
     }
+    let handledelete = async (id) => {
+        if (data != "EMPLOYEe") {
+            try {
+                const confirm = window.confirm("Are u sure?")
+                if (confirm) {
+                    await axios.delete(`https://6476d0759233e82dd53a5ea1.mockapi.io/user/${id}`)
+                    fetchUsers()
+                }
+
+            } catch (error) {
+                console.log(error)
+                alert("Something went wronmg")
+            }
+        }
+        else {
+            alert("You cant Delete...Contact Your Admin")
+        }
+    }
 
     return (
         <>
@@ -113,7 +131,11 @@ function Service() {
 
                                     <td><button onClick={() => handleview(data._id)} className='btn btn-success '>View</button >   </td>
                                     <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
-
+                                    <td>
+                                        <button onClick={() => {
+                                            handledelete(data.id)
+                                        }} className='btn btn-danger'>Delete</button>
+                                    </td>
 
 
                                 </tr>

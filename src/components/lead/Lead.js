@@ -74,13 +74,17 @@ function Lead() {
     let handledelete = async (id) => {
         if (data != "EMPLOYEe") {
             try {
-                const confirm = window.confirm("Are u sure?")
-                if (confirm) {
-                    await axios.delete(`https://hackathon-p9ka.onrender.com/leads/${id}`)
-                    fetchUsers()
-                }
 
-            } catch (error) {
+                await axios.delete(`https://hackathon-p9ka.onrender.com/leads/${id}`, {
+                    headers: {
+                        Authorization: `${window.localStorage.getItem("token")}`
+                    }
+                })
+                alert('userdeleted')
+                fetchUsers()
+
+            }
+            catch (error) {
                 console.log(error)
                 alert("Something went wronmg")
             }

@@ -29,7 +29,7 @@ function UserList() {
             console.log('error')
         }
     }
-    let handledelete = async (userdata) => {
+    let handleDelete = async (userdata) => {
         if (data != "EMPLOYEe") {
             try {
                 const confirm = window.confirm("Are u sure?")

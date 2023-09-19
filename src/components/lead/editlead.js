@@ -48,7 +48,7 @@ function Editlead() {
                     }
                 })
                 alert("Lead Updated")
-                navigate('/portal/ead/')
+                navigate('/portal/lead/')
             }
             catch (error) {
                 console.log('error')

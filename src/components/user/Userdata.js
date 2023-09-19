@@ -31,7 +31,7 @@ function Userdata() {
         console.log(userList.role);
         try {
 
-            navigate(`/userlist/`)
+            navigate(`/portal/userlist/`)
         }
         catch (error) {
             console.log('error')

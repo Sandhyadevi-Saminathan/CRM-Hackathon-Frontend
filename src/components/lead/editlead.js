@@ -76,9 +76,14 @@ function Editlead() {
                             <div className='row'>
 
                                 <div className='col-lg-12'>
-                                    <label>Name</label>
+                                    <label>First Name</label>
                                     <input type='text' name="fname"
                                         className='form-control' onChange={formik.handleChange} value={formik.values.fname} />
+                                </div>
+                                <div className='col-lg-12'>
+                                    <label>Last Name</label>
+                                    <input type='text' name="lname"
+                                        className='form-control' onChange={formik.handleChange} value={formik.values.lname} />
                                 </div>
                                 <div className='col-lg-12'>
                                     <label>Email</label>

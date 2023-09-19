@@ -76,7 +76,7 @@ function Lead() {
             try {
                 const confirm = window.confirm("Are u sure?")
                 if (confirm) {
-                    await axios.delete(`https://hackathon-p9ka.onrender.com/user/${id}`)
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/leads/${id}`)
                     fetchUsers()
                 }
 
@@ -142,6 +142,8 @@ function Lead() {
                         </tbody>
                     </table>
                     <button onClick={() => addcon()} className='btn btn-primary text-right mb-2 ml-2'>Create Contact</button>
+
+
                 </div>
 
             }

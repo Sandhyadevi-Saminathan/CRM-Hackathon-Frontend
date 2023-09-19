@@ -32,7 +32,6 @@ function Editlead() {
         initialValues: {
             fname: "",
             email: "",
-            lname: "",
             company: "",
             status: "",
 

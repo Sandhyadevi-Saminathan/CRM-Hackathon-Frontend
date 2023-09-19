@@ -44,7 +44,7 @@ function RequestService() {
                     }
                 });
                 alert("service requested");
-                navigate('/service');
+                navigate('/portal/service');
             } catch (error) {
                 console.error('service error');
             }
@@ -130,7 +130,7 @@ function RequestService() {
                             <div className='form-group col-lg-12 ml-2' >
 
                                 <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2'>Submit</button>
-                                <Link to={`/Home`}> <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2' >Back</button></Link>
+                                <Link to={`/portal/service`}> <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2' >Back</button></Link>
                             </div><hr />
                         </form>
                     </div>

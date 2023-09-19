@@ -44,7 +44,7 @@ function Editservice() {
                     }
                 })
                 alert("Service Updated")
-                navigate('/service/')
+                navigate('/portal/service/')
             }
             catch (error) {
                 console.log('error')
@@ -112,8 +112,8 @@ function Editservice() {
 
                                 </div>
 
-                                <button type={"Submit"} className='btn btn-primary mt-3' style={{ "margin-left": "40%" }}>Update</button>
-                                <Link to={`/service`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
+                                <button type={"Submit"} className='btn btn-primary mt-3'>Update</button>
+                                <Link to={`/portal/service`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
 
 
                             </div>

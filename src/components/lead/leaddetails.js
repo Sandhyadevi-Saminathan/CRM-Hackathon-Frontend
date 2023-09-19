@@ -31,7 +31,7 @@ function Leaddetails() {
         console.log(userList.role);
         try {
 
-            navigate(`/lead/`)
+            navigate(`/portal/lead/`)
         }
         catch (error) {
             console.log('error')

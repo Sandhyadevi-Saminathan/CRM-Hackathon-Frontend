@@ -56,7 +56,7 @@ function Contact() {
                     }
                 });
                 alert("Lead created");
-                navigate('/lead')
+                navigate('/portal/lead')
             } catch (error) {
                 console.error('contact creation error');
             }
@@ -172,7 +172,7 @@ function Contact() {
                         <div className='form-group col-lg-12 ml-2' >
 
                             <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2'>Submit</button>
-                            <Link to={`/Home`}> <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2' >Back</button></Link>
+                            <Link to={`/portal/lead`}> <button type='submit' className='btn btn-primary rounded  justify-content-center  mt-2' >Back</button></Link>
                         </div><hr />
                     </form>
 

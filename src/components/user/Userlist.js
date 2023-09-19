@@ -74,7 +74,7 @@ function UserList() {
 
         try {
 
-            navigate(`/portal//Userdata/${userData}`)
+            navigate(`/portal/Userdata/${userData}`)
 
         }
         catch (error) {

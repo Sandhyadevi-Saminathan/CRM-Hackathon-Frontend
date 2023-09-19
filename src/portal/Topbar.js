@@ -18,7 +18,7 @@ function Topbar() {
                         <Link className="nav-link dropdown-toggle" to="/" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {/* <span class="font-weight-bold" style={{ color: "black" }}>Hello</span> */}
-                            <Link className="nav-link dropdown-toggle" role="button" to='/portal/user/${id}'>
+                            <Link className="nav-link dropdown-toggle" role="button" to={`/portal/user/${id}`}>
                                 <span class="font-weight-bold" style={{ color: "white" }}>PROFILE</span></Link>
 
                             <Link className="nav-link" to="/">

@@ -31,7 +31,7 @@ function Servicedetails() {
 
         try {
 
-            navigate(`/service/`)
+            navigate(`/portal/service/`)
         }
         catch (error) {
             console.log('error')

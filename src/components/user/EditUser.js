@@ -45,7 +45,7 @@ function EditUser() {
                     }
                 })
                 alert("User Updated")
-                navigate('/userlist/')
+                navigate('/portal/userlist/')
             }
             catch (error) {
                 console.log('error')
@@ -93,8 +93,8 @@ function EditUser() {
 
                                 </div>
 
-                                <button type={"Submit"} className='btn btn-primary mt-3' style={{ "margin-left": "40%" }} >Update</button>
-                                <Link to={`/userlist`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
+                                <button type={"Submit"} className='btn btn-primary mt-3'>Update</button>
+                                <Link to={`/portal/userlist`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
 
                             </div>
                         </form>

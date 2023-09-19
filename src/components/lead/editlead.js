@@ -48,7 +48,7 @@ function Editlead() {
                     }
                 })
                 alert("Lead Updated")
-                navigate('/Lead/')
+                navigate('/portal/ead/')
             }
             catch (error) {
                 console.log('error')
@@ -107,8 +107,8 @@ function Editlead() {
 
                                 </div>
 
-                                <button type={"Submit"} className='btn btn-primary mt-3' style={{ "margin-left": "40%" }}>Update</button>
-                                <Link to={`/lead`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
+                                <button type={"Submit"} className='btn btn-primary mt-3'>Update</button>
+                                <Link to={`/portal/lead`}> <button type='submit' className='btn btn-primary rounded  justify-content-center mt-3 ml-2' >Back</button></Link>
 
 
                             </div>

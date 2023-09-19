@@ -51,7 +51,7 @@ function Addemployee() {
 
                 alert("User Added");
                 formik.resetForm();
-                navigate("/userlist");
+                navigate("/portal/userlist");
             } catch (error) {
 
                 console.log(error);

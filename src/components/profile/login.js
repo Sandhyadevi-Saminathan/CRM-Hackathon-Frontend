@@ -43,11 +43,11 @@ function Login() {
     })
 
     return (
-        <div className="container">
+        <div className="container mt-5 " >
 
-            <div className='row justify-content-center align-items-center'  >
+            <div className='row justify-content-center'  >
 
-                <div className="col-xl-10 col-lg-12 col-md-9" style={{ backgroundColor: "white" }}>
+                <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-10 rounded" style={{ backgroundColor: "pink" }}>
                     <h3 className='text-center'>CUSTOM RELATIONSHIP MANAGEMENT</h3><hr />
                     <form onSubmit={formik.handleSubmit}>
                         <div className='form-group col-lg-12'>
@@ -70,8 +70,8 @@ function Login() {
                                 placeholder='Enter your password'></input>
                             <span style={{ color: "red" }}>{formik.errors.password}</span>
                         </div>
-                        <div className='form-group col-lg-12 '>
-                            <button type='submit' className='btn btn-primary rounded col-lg-12 justify-content-center mt-5 align-items-center'>Log in</button>
+                        <div className='form-group col-lg-12 text-center '>
+                            <button type='submit' className='btn btn-primary rounded col-sm-5 justify-content-center text-center'>Log in</button>
                         </div><hr />
                         <div className='form-group col-lg-12 text-center'><p className='text-center'>Don't have account?</p>
                             <Link to={'/register'}> <button type='button' className='btn btn-primary rounded col-sm-5 justify-content-center text-center'>Sign Up</button></Link>

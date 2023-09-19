@@ -29,29 +29,30 @@ function UserList() {
             console.log('error')
         }
     }
-    let handleDelete = async (userData) => {
-        console.log(userData)
+    let handledelete = async (userdata) => {
         if (data != "EMPLOYEe") {
             try {
                 const confirm = window.confirm("Are u sure?")
                 if (confirm) {
-                    await axios.delete(`https://hackathon-p9ka.onrender.com/user/${userData}`, {
+
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/user/${userdata}`, {
                         headers: {
                             Authorization: `${window.localStorage.getItem("token")}`
                         }
                     })
-                    alert('user deleted')
+
+                    alert('User deleted')
                     fetchUsers()
                 }
             }
             catch (error) {
-                console.log("Error")
+                console.log(error)
+                alert("Something went wronmg")
             }
         }
         else {
-            alert("You can't delete. Contact your Admin")
+            alert("You cant Delete...Contact Your Admin")
         }
-
     }
 
     let handleedit = async (userData) => {

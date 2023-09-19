@@ -75,11 +75,18 @@ function Service() {
             try {
                 const confirm = window.confirm("Are u sure?")
                 if (confirm) {
-                    await axios.delete(`https://hackathon-p9ka.onrender.com/srequest/${id}`)
+
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/srequest/${id}`, {
+                        headers: {
+                            Authorization: `${window.localStorage.getItem("token")}`
+                        }
+                    })
+
+                    alert('Service Request deleted')
                     fetchUsers()
                 }
-
-            } catch (error) {
+            }
+            catch (error) {
                 console.log(error)
                 alert("Something went wronmg")
             }
@@ -130,7 +137,7 @@ function Service() {
                                     <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
                                     <td>
                                         <button onClick={() => {
-                                            handledelete(data.id)
+                                            handledelete(data._id)
                                         }} className='btn btn-danger'>Delete</button>
                                     </td>
 

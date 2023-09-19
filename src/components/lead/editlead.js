@@ -32,17 +32,16 @@ function Editlead() {
         initialValues: {
             fname: "",
             lname: "",
-            company: "",
-            phone: "",
-            status: "",
-            socialchannel: "",
-            address: "",
             email: "",
+            company: "",
+            status: "",
         },
 
         onSubmit: async (values) => {
-            try {
 
+            try {
+                delete values._id;
+                console.log(values._id)
 
                 await axios.put(`https://hackathon-p9ka.onrender.com/editlead/${params.id}`, values, {
                     headers: {

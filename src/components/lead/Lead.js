@@ -74,15 +74,18 @@ function Lead() {
     let handledelete = async (id) => {
         if (data != "EMPLOYEe") {
             try {
+                const confirm = window.confirm("Are u sure?")
+                if (confirm) {
 
-                await axios.delete(`https://hackathon-p9ka.onrender.com/leads/${id}`, {
-                    headers: {
-                        Authorization: `${window.localStorage.getItem("token")}`
-                    }
-                })
-                alert('userdeleted')
-                fetchUsers()
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/leads/${id}`, {
+                        headers: {
+                            Authorization: `${window.localStorage.getItem("token")}`
+                        }
+                    })
 
+                    alert('Lead deleted')
+                    fetchUsers()
+                }
             }
             catch (error) {
                 console.log(error)
@@ -133,7 +136,7 @@ function Lead() {
                                     <td><button onClick={() => handleedit(data._id)} className='btn btn-primary'>Edit</button></td>
                                     <td>
                                         <button onClick={() => {
-                                            handledelete(data.id)
+                                            handledelete(data._id)
                                         }} className='btn btn-danger'>Delete</button>
                                     </td>
 

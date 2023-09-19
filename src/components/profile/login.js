@@ -47,7 +47,7 @@ function Login() {
 
             <div className='row justify-content-center align-items-center'  >
 
-                <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-10 rounded" style={{ backgroundColor: "white" }}>
+                <div className="col-xl-10 col-lg-12 col-md-9" style={{ backgroundColor: "white" }}>
                     <h3 className='text-center'>CUSTOM RELATIONSHIP MANAGEMENT</h3><hr />
                     <form onSubmit={formik.handleSubmit}>
                         <div className='form-group col-lg-12'>

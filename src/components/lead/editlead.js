@@ -31,10 +31,13 @@ function Editlead() {
     const formik = useFormik({
         initialValues: {
             fname: "",
-            email: "",
+            lname: "",
             company: "",
+            phone: "",
             status: "",
-
+            socialchannel: "",
+            address: "",
+            email: "",
         },
 
         onSubmit: async (values) => {

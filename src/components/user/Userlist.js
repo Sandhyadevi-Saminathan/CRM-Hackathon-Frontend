@@ -33,15 +33,16 @@ function UserList() {
         console.log(userData)
         if (data != "EMPLOYEe") {
             try {
-
-                await axios.delete(`https://hackathon-p9ka.onrender.com/user/${userData}`, {
-                    headers: {
-                        Authorization: `${window.localStorage.getItem("token")}`
-                    }
-                })
-                alert('userdeleted')
-                fetchUsers()
-
+                const confirm = window.confirm("Are u sure?")
+                if (confirm) {
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/user/${userData}`, {
+                        headers: {
+                            Authorization: `${window.localStorage.getItem("token")}`
+                        }
+                    })
+                    alert('user deleted')
+                    fetchUsers()
+                }
             }
             catch (error) {
                 console.log("Error")

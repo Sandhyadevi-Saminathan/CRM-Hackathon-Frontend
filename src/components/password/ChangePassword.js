@@ -45,7 +45,7 @@ function ChangePassword() {
     )
     return (
         <div className='row justify-content-center align-items-center'  >
-            <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-10 rounded" style={{ backgroundColor: "white" }}>
+            <div className="col-md-9 col-lg-6 col-xl-4 h-70 shadow p-3 mb-5 mt-5 rounded" style={{ backgroundColor: "white" }}>
 
                 <div className="text-center">
                     <h1 className="h4 text-gray-900 mb-4">Reset Your Password </h1>

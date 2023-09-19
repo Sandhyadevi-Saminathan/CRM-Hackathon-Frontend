@@ -75,7 +75,7 @@ function Service() {
             try {
                 const confirm = window.confirm("Are u sure?")
                 if (confirm) {
-                    await axios.delete(`https://hackathon-p9ka.onrender.com/user/${id}`)
+                    await axios.delete(`https://hackathon-p9ka.onrender.com/srequest/${id}`)
                     fetchUsers()
                 }
 

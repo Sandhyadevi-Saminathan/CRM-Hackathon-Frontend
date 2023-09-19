@@ -35,7 +35,7 @@ function Register() {
             if (!values.password) {
                 error.password = "Please enter Password";
             } else if (values.password.length < 8) {
-                error.password1 = 'Length should be more than 8 Characters';
+                error.password = 'Length should be more than 8 Characters';
             }
             if (!values.phone) {
                 error.phone = "Please enter Phone Number";
